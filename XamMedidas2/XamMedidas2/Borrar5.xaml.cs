@@ -10,6 +10,7 @@ namespace XamMedidas2
         public Borrar5()
         {
             InitializeComponent();
+            int prueba = 5;
         }
     }
 }
