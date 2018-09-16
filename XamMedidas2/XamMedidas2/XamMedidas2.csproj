@@ -20,4 +20,8 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Borrar3.cs" />
+    <Compile Remove="Borrar4.cs" />
+  </ItemGroup>
 </Project>
