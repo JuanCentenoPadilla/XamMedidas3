@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamMedidas2"
+             x:Class="XamMedidas2.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <!-- Place new controls here -->
+        <StackLayout Orientation="Horizontal"
+                     BackgroundColor="Olive" >
+            <Label Text="FECHA: "
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="10"
+                   VerticalTextAlignment="Center"/>
+            <DatePicker x:Name="DtpFecha"
+                        DateSelected="DtpFecha_DateSelected"
+                        TextColor="White"
+                        HorizontalOptions="Start"/>
+            <Label Text="MED.: "
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   Margin="10"
+                   VerticalTextAlignment="Center"/>
+            <Entry x:Name="TxtMedidor"
+                   HorizontalOptions="End"
+                   Placeholder="Medidor"
+                   PlaceholderColor="Gray"
+                   Text="056"
+                   TextColor="White"/>
+        </StackLayout>
+        <ListView x:Name="MiLista"
+                  BackgroundColor="WhiteSmoke"
+                  Margin="10"
+                  RowHeight="60"
+                  VerticalOptions="StartAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding ="0,5">
+                            <Frame Padding="20,3,20,3"
+                                   BackgroundColor="Coral"
+                                   CornerRadius="15">
+                                <Label Text="{Binding MedidasNotasContador}"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        TextColor="White"
+                                        FontSize="Large"
+                                        FontAttributes="Bold"/>
+                            </Frame>
+                            <StackLayout Orientation="Vertical"
+                                         Margin="10">
+                                <Label Text="{Binding MedidasNotasdomicilio}"
+                                       TextColor="Blue"
+                                       FontSize="Medium"/>
+                                <Label Text="{Binding MedidasNotasobservaciones}"
+                                       FontSize="Small"
+                                       TextColor="Black"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
+             x:Class="XamMedidas2.DetallePage"
+             Title="Detalle">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     BackgroundColor="White">
+            <StackLayout Orientation="Horizontal">
+                <Frame Padding="20,3,20,3"
+                       BackgroundColor="Coral"
+                       CornerRadius="15">
+                    <Label x:Name="TxtCuentaClientes"
+                           Text="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"
+                           FontSize="Large"
+                           FontAttributes="Bold"/>
+                </Frame>
+                <Label x:Name="TxtCleinte"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Text="15204 CENTENO PADILLA, JUAN"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Image x:Name="ImgDireccion"
+                           Source="directions.png"
+                           Aspect="AspectFill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ImgDireccion_Clicked"
+                                NumberOfTapsRequired="1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="TxtDireccion" 
+                           Text="Direccion"/>
+                    <Label x:Name="TxtPoblacion"
+                           Text="Direccion"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="ImgTelefono1"
+                       Source="phone.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="ImgTelefono1_Clicked"
+                                NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label x:Name="TxtTelefono1"/>
+                <Image x:Name="ImgTelefono2"
+                       Source="phone.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="ImgTelefono2_Clicked"
+                                NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label x:Name="TxtTelefono2"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="TxtObservaciones"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="ButCamara"
+                        Text="Camara"
+                        Clicked="ButCamara_Clicked">
+                </Button>
+                <Button x:Name="ButGaleria"
+                        Text="Galeria">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
