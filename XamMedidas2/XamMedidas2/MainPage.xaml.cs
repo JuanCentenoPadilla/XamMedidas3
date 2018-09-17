@@ -25,7 +25,7 @@ namespace XamMedidas2
         string MiAno;
         string MiMedidor;
 
-        int borrar = 3;
+        int comprobacion = 33;
 
         public MainPage()
         {
