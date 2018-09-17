@@ -1,24 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamMedidas2"
-             x:Class="XamMedidas2.MainPage">
+             x:Class="XamMedidas2.MainPage"
+             Title="MEDIDAS..."
+             BackgroundColor="White">
 
     <StackLayout Orientation="Vertical">
         <!-- Place new controls here -->
         <StackLayout Orientation="Horizontal"
-                     BackgroundColor="Olive" >
+                     BackgroundColor="White" >
             <Label Text="FECHA: "
                    FontAttributes="Bold"
-                   TextColor="White"
+                   TextColor="Black"
                    Margin="10"
                    VerticalTextAlignment="Center"/>
             <DatePicker x:Name="DtpFecha"
                         DateSelected="DtpFecha_DateSelected"
-                        TextColor="White"
+                        TextColor="Black"
                         HorizontalOptions="Start"/>
             <Label Text="MED.: "
-                   TextColor="White"
+                   TextColor="Black"
                    FontAttributes="Bold"
                    Margin="10"
                    VerticalTextAlignment="Center"/>
@@ -27,41 +29,45 @@
                    Placeholder="Medidor"
                    PlaceholderColor="Gray"
                    Text="056"
-                   TextColor="White"/>
+                   TextColor="Black"/>
         </StackLayout>
         <ListView x:Name="MiLista"
                   BackgroundColor="WhiteSmoke"
                   Margin="10"
                   RowHeight="60"
-                  VerticalOptions="StartAndExpand">
+                  VerticalOptions="StartAndExpand"
+                  SeparatorColor="Black">
+                  
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"
                                      Padding ="0,5">
-                            <Frame Padding="20,3,20,3"
-                                   BackgroundColor="Coral"
-                                   CornerRadius="15">
-                                <Label Text="{Binding MedidasNotasContador}"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center"
-                                        TextColor="White"
-                                        FontSize="Large"
-                                        FontAttributes="Bold"/>
-                            </Frame>
-                            <StackLayout Orientation="Vertical"
-                                         Margin="10">
-                                <Label Text="{Binding MedidasNotasdomicilio}"
-                                       TextColor="Blue"
-                                       FontSize="Medium"/>
-                                <Label Text="{Binding MedidasNotasobservaciones}"
-                                       FontSize="Small"
-                                       TextColor="Black"/>
-                            </StackLayout>
+                                <Frame Padding="20,3,20,3"
+                                       BackgroundColor="White"
+                                       CornerRadius="10"
+                                       BorderColor="Black">
+                                    <Label Text="{Binding MedidasNotasContador}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            FontSize="Large"
+                                            FontAttributes="Bold"/>
+                                </Frame>
+                                <StackLayout Orientation="Vertical"
+                                             Margin="10">
+                                    <Label Text="{Binding MedidasNotasdomicilio}"
+                                           TextColor="Blue"
+                                           FontSize="Medium"/>
+                                    <Label Text="{Binding MedidasNotasobservaciones}"
+                                           FontSize="Small"
+                                           TextColor="Black"/>
+                                </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            
         </ListView>
     </StackLayout>
 
