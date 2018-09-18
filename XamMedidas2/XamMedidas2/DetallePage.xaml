@@ -8,10 +8,9 @@
         <StackLayout Orientation="Vertical"
                      BackgroundColor="White">
             <StackLayout Orientation="Horizontal">
-                <Frame Padding="20,3,20,3"
+                <Frame Padding="20,5,20,5"
                        BackgroundColor="White"
-                       CornerRadius="10"
-                       BorderColor="Black">
+                       CornerRadius="10">
                     <Label x:Name="TxtCuentaClientes"
                            Text="1"
                            HorizontalOptions="Center"

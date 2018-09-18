@@ -34,8 +34,7 @@
         <ListView x:Name="MiLista"
                   BackgroundColor="WhiteSmoke"
                   Margin="10"
-                  RowHeight="60"
-                  VerticalOptions="StartAndExpand"
+                  VerticalOptions="FillAndExpand"
                   SeparatorColor="Black">
                   
             <ListView.ItemTemplate>
@@ -45,8 +44,7 @@
                                      Padding ="0,5">
                                 <Frame Padding="20,3,20,3"
                                        BackgroundColor="White"
-                                       CornerRadius="10"
-                                       BorderColor="Black">
+                                       CornerRadius="10">
                                     <Label Text="{Binding MedidasNotasContador}"
                                             HorizontalOptions="Center"
                                             VerticalOptions="Center"
