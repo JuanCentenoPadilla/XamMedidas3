@@ -35,14 +35,14 @@
                   BackgroundColor="WhiteSmoke"
                   Margin="10"
                   VerticalOptions="FillAndExpand"
+                  RowHeight="60"
                   SeparatorColor="Black">
-                  
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"
-                                     Padding ="0,5">
-                                <Frame Padding="20,3,20,3"
+                                     Padding ="5">
+                                <Frame Padding="20,5,20,5"
                                        BackgroundColor="White"
                                        CornerRadius="10">
                                     <Label Text="{Binding MedidasNotasContador}"
@@ -53,20 +53,20 @@
                                             FontAttributes="Bold"/>
                                 </Frame>
                                 <StackLayout Orientation="Vertical"
-                                             Margin="10">
+                                             Margin="5">
                                     <Label Text="{Binding MedidasNotasdomicilio}"
                                            TextColor="Blue"
+                                           LineBreakMode="TailTruncation"
                                            FontSize="Medium"/>
                                     <Label Text="{Binding MedidasNotasobservaciones}"
                                            FontSize="Small"
+                                           LineBreakMode="TailTruncation"
                                            TextColor="Black"/>
                                 </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            
         </ListView>
     </StackLayout>
-
 </ContentPage>
