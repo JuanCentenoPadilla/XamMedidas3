@@ -32,17 +32,17 @@ namespace XamMedidas2
             DtpFecha.Date = DateTime.Now;
 
             Servidor = "No Encontrado";
-            //Ping MiPing = new Ping();
-            //if (MiPing.Send("192.168.1.200").Status == IPStatus.Success)
-            //{
-            //    Servidor = "192.168.1.200";
-            //}
-            //else
-            //{
-            //    Servidor = "213.98.73.215";
-            //}
+            Ping MiPing = new Ping();
+            if (MiPing.Send("192.168.1.200").Status == IPStatus.Success)
+            {
+                Servidor = "192.168.1.200";
+            }
+            else
+            {
+                Servidor = "213.98.73.215";
+            }
 
-            Servidor = "213.98.73.215";
+            //Servidor = "213.98.73.215";
 
             MiDia = DtpFecha.Date.Day.ToString("00");
             MiMes = DtpFecha.Date.Month.ToString("00");
