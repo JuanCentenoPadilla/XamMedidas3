@@ -75,6 +75,12 @@
                         Text="Galeria">
                 </Button>
             </StackLayout>
+            <StackLayout>
+                <Image x:Name="MiImagen"
+                       HeightRequest="300"
+                       WidthRequest="300">
+                </Image>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

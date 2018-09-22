@@ -38,51 +38,71 @@ namespace XamMedidas2
         {
             await CrossMedia.Current.Initialize();
 
-            if (CrossMedia.Current.IsCameraAvailable &&
-                CrossMedia.Current.IsTakePhotoSupported)
+            if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
             {
-                var source = await Application.Current.MainPage.DisplayActionSheet(
-                    "Seleccionar Origen De Imagen",
-                    "Cancelar",
-                    null,
-                    "Galeria",
-                    "Camara");
-
-                if (source == "Cancelar")
-                {
-                    this.file = null;
-                    return;
-                }
-
-                if (source == "Camara")
-                {
-                    this.file = await CrossMedia.Current.TakePhotoAsync(
-                        new StoreCameraMediaOptions
-                        {
-                            Directory = "Sample",
-                            Name = "test.jpg",
-                            PhotoSize = PhotoSize.Small,
-                        }
-                    );
-                }
-                else
-                {
-                    this.file = await CrossMedia.Current.PickPhotoAsync();
-                }
+                await DisplayAlert("Mensaje..", "Captura de foto no soportada", "ok");
+                return;
             }
             else
             {
-                this.file = await CrossMedia.Current.PickPhotoAsync();
-            }
-
-            if (this.file != null)
-            {
-                this.imageSource = ImageSource.FromStream(() =>
+                var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    Directory = "Images",
+                    Name = DateTime.Now + "_test.jpg"
+                });
+                if (file == null) return;
+                await DisplayAlert("Path...:", file.Path, "ok");
+                MiImagen.Source = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
                     return stream;
                 });
             }
+            //if (CrossMedia.Current.IsCameraAvailable &&
+            //    CrossMedia.Current.IsTakePhotoSupported)
+            //{
+            //    var source = await Application.Current.MainPage.DisplayActionSheet(
+            //        "Seleccionar Origen De Imagen",
+            //        "Cancelar",
+            //        null,
+            //        "Galeria",
+            //        "Camara");
+
+            //    if (source == "Cancelar")
+            //    {
+            //        this.file = null;
+            //        return;
+            //    }
+
+            //    if (source == "Camara")
+            //    {
+            //        this.file = await CrossMedia.Current.TakePhotoAsync(
+            //            new StoreCameraMediaOptions
+            //            {
+            //                Directory = "Sample",
+            //                Name = "test.jpg",
+            //                PhotoSize = PhotoSize.Small,
+            //            }
+            //        );
+            //    }
+            //    else
+            //    {
+            //        this.file = await CrossMedia.Current.PickPhotoAsync();
+            //    }
+            //}
+            //else
+            //{
+            //    this.file = await CrossMedia.Current.PickPhotoAsync();
+            //}
+
+            //if (this.file != null)
+            //{
+            //    this.imageSource = ImageSource.FromStream(() =>
+            //    {
+            //        var stream = file.GetStream();
+            //        return stream;
+            //    });
+            //}
         }
 
         private void ImgDireccion_Clicked(object sender, EventArgs e)
