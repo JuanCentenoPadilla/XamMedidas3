@@ -45,6 +45,7 @@ namespace XamMedidas2
             }
             else
             {
+
                 var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                 {
                     Directory = "Images",
