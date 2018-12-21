@@ -30,7 +30,7 @@ namespace XamMedidas2
         {
             InitializeComponent();
             DtpFecha.Date = DateTime.Now;
-
+            //prueba
             Servidor = "No Encontrado";
             Ping MiPing = new Ping();
             if (MiPing.Send("192.168.1.200").Status == IPStatus.Success)
