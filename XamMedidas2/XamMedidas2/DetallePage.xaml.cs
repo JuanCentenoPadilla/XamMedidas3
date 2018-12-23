@@ -167,5 +167,30 @@ namespace XamMedidas2
             catch
             { return ""; }
         }
+
+        private async void ButGaleria_Clicked(object sender, EventArgs e)
+        {
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                return;
+            }
+            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+            });
+
+
+            if (file == null)
+                return;
+            
+            MiImagen.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                file.Dispose();
+                return stream;
+            });
+        }
     }
 }
