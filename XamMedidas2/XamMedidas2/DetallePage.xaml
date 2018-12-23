@@ -72,7 +72,8 @@
                         Clicked="ButCamara_Clicked">
                 </Button>
                 <Button x:Name="ButGaleria"
-                        Text="Galeria">
+                        Text="Galeria"
+                        Clicked="ButGaleria_Clicked">
                 </Button>
             </StackLayout>
             <StackLayout>
@@ -90,29 +91,23 @@
                                     <Frame Padding="20,5,20,5"
                                    BackgroundColor="White"
                                    CornerRadius="10">
-                                        <Label Text="{Binding MedidasNotasContador}"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"
-                                       TextColor="Black"
-                                       FontSize="Large"
-                                       FontAttributes="Bold"/>
+                                        <Image >
+                                            
+                                        </Image>
                                     </Frame>
                                     <StackLayout Orientation="Vertical"
                                          Margin="5">
-                                        <Label Text="{Binding MedidasNotasdomicilio}"
-                                       TextColor="Blue"
-                                       LineBreakMode="TailTruncation"
-                                       FontSize="Medium"/>
-                                        <Label Text="{Binding MedidasNotasobservaciones}"
-                                       FontSize="Small"
-                                       LineBreakMode="TailTruncation"
-                                       TextColor="Black"/>
+                                        <Label Text="Ruta de la imagen"
+                                                TextColor="Blue"
+                                                LineBreakMode="TailTruncation"
+                                                FontSize="Medium"/>
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Image x:Name="MiImagen"></Image>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
