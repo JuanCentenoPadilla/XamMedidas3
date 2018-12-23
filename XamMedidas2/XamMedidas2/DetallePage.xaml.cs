@@ -53,11 +53,6 @@ namespace XamMedidas2
                 });
                 if (file == null) return;
                 await DisplayAlert("Path...:", file.Path, "ok");
-                MiImagen.Source = ImageSource.FromStream(() =>
-                {
-                    var stream = file.GetStream();
-                    return stream;
-                });
             }
             //if (CrossMedia.Current.IsCameraAvailable &&
             //    CrossMedia.Current.IsTakePhotoSupported)
