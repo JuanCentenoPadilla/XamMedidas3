@@ -76,10 +76,43 @@
                 </Button>
             </StackLayout>
             <StackLayout>
-                <Image x:Name="MiImagen"
-                       HeightRequest="300"
-                       WidthRequest="300">
-                </Image>
+                <ListView x:Name="MiLista"
+                  BackgroundColor="WhiteSmoke"
+                  Margin="10"
+                  VerticalOptions="FillAndExpand"
+                  RowHeight="60"
+                  SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal"
+                                     Padding ="5">
+                                    <Frame Padding="20,5,20,5"
+                                   BackgroundColor="White"
+                                   CornerRadius="10">
+                                        <Label Text="{Binding MedidasNotasContador}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       TextColor="Black"
+                                       FontSize="Large"
+                                       FontAttributes="Bold"/>
+                                    </Frame>
+                                    <StackLayout Orientation="Vertical"
+                                         Margin="5">
+                                        <Label Text="{Binding MedidasNotasdomicilio}"
+                                       TextColor="Blue"
+                                       LineBreakMode="TailTruncation"
+                                       FontSize="Medium"/>
+                                        <Label Text="{Binding MedidasNotasobservaciones}"
+                                       FontSize="Small"
+                                       LineBreakMode="TailTruncation"
+                                       TextColor="Black"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
