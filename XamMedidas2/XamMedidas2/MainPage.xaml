@@ -35,23 +35,30 @@
                   BackgroundColor="WhiteSmoke"
                   Margin="10"
                   VerticalOptions="FillAndExpand"
-                  RowHeight="60"
+                  RowHeight="70"
                   SeparatorColor="Black">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"
                                      Padding ="5">
-                            <Frame Padding="20,5,20,5"
+                            <StackLayout Orientation="Vertical"
+                                         WidthRequest="60">
+                                <Frame Padding="15,5,15,5"
                                    BackgroundColor="White"
-                                   CornerRadius="10">
-                                <Label Text="{Binding MedidasNotasContador}"
+                                   CornerRadius="15">
+                                    <Label Text="{Binding MedidasNotasContador}"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"
                                        TextColor="Black"
                                        FontSize="Large"
                                        FontAttributes="Bold"/>
-                            </Frame>
+                                </Frame>
+                                <Label Text="{Binding MedidasNotasnomzona}"
+                                       TextColor="Blue"
+                                       LineBreakMode="TailTruncation"
+                                       FontSize="Micro"/>
+                            </StackLayout>
                             <StackLayout Orientation="Vertical"
                                          Margin="5">
                                 <Label Text="{Binding MedidasNotasdomicilio}"
