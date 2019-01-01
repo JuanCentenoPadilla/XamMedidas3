@@ -182,8 +182,7 @@ namespace XamMedidas2
             });
 
 
-            if (file == null)
-                return;
+            if (file == null) return;
             
             MiImagen.Source = ImageSource.FromStream(() =>
             {
@@ -191,6 +190,8 @@ namespace XamMedidas2
                 file.Dispose();
                 return stream;
             });
+
+            
         }
     }
 }
