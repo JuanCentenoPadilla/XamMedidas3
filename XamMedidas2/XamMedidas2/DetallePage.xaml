@@ -69,20 +69,21 @@
             <StackLayout>
 
                 <ListView x:Name="MiLista"
-                  BackgroundColor="WhiteSmoke"
-                  Margin="10"
-                  VerticalOptions="FillAndExpand"
-                  RowHeight="60"
-                  SeparatorColor="Black">
+                            BackgroundColor="WhiteSmoke"
+                            Margin="10"
+                            VerticalOptions="FillAndExpand"
+                            RowHeight="60"
+                            SeparatorColor="Black">
                     <ListView.Header>
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center">
                             <Button x:Name="ButCamara"
-                        Text="Camara"
-                        Clicked="ButCamara_Clicked">
+                                    Text="Camara"
+                                    Clicked="ButCamara_Clicked">
                             </Button>
                             <Button x:Name="ButGaleria"
-                        Text="Galeria"
-                        Clicked="ButGaleria_Clicked">
+                                    Text="Galeria"
+                                    Clicked="ButGaleria_Clicked">
                             </Button>
                         </StackLayout>
                     </ListView.Header>
@@ -91,18 +92,19 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal"
-                                     Padding ="5">
-                                    <Frame Padding="20,5,20,5"
-                                   BackgroundColor="White"
-                                   CornerRadius="10">
-                                        <Image x:Name="MiImagen" >
+                                             Padding ="5">
+                                    <Frame  Padding="20,5,20,5"
+                                            BackgroundColor="White"
+                                            CornerRadius="10">
+                                        <Image x:Name="MiImagen"
+                                               Source="{Binding ImagenPath}">
                                             
                                         </Image>
                                     </Frame>
                                     <StackLayout Orientation="Vertical"
-                                         Margin="5">
+                                                 Margin="5">
                                         <Label  x:Name="MIPath"
-                                                Text="Ruta de la imagen"
+                                                Text="{Binding ImagenNombre}"
                                                 TextColor="Blue"
                                                 LineBreakMode="TailTruncation"
                                                 FontSize="Medium"/>
