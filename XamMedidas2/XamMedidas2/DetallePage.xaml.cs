@@ -190,7 +190,6 @@ namespace XamMedidas2
                 file.Dispose();
                 return stream;
             });
-
             
         }
     }
