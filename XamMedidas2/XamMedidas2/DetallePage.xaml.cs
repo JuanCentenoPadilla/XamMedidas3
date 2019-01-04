@@ -36,24 +36,32 @@ namespace XamMedidas2
 
         private async void ButCamara_Clicked(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
 
-            if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
-            {
-                await DisplayAlert("Mensaje..", "Captura de foto no soportada", "ok");
-                return;
-            }
-            else
-            {
+            var MiListaEnlace = new List<string>();
+            MiListaEnlace.Add("Elemento 1");
+            MiListaEnlace.Add("Elemento 2");
+            MiLista.ItemsSource = MiListaEnlace;
 
-                var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                {
-                    Directory = "Images",
-                    Name = DateTime.Now + "_test.jpg"
-                });
-                if (file == null) return;
-                await DisplayAlert("Path...:", file.Path, "ok");
-            }
+            //await CrossMedia.Current.Initialize();
+
+            //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
+            //{
+            //    await DisplayAlert("Mensaje..", "Captura de foto no soportada", "ok");
+            //    return;
+            //}
+            //else
+            //{
+
+            //    var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            //    {
+            //        Directory = "Images",
+            //        Name = DateTime.Now + "_test.jpg"
+            //    });
+            //    if (file == null) return;
+            //    await DisplayAlert("Path...:", file.Path, "ok");
+            //}
+
+
             //if (CrossMedia.Current.IsCameraAvailable &&
             //    CrossMedia.Current.IsTakePhotoSupported)
             //{
@@ -190,7 +198,7 @@ namespace XamMedidas2
                 file.Dispose();
                 return stream;
             });
-            
+
         }
     }
 }
