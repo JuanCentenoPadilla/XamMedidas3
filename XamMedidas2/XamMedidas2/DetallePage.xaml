@@ -67,27 +67,23 @@
                 <Label x:Name="TxtObservaciones"/>
             </StackLayout>
             <StackLayout>
-
+                <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center">
+                    <Button x:Name="ButCamara"
+                                    Text="Camara"
+                                    Clicked="ButCamara_Clicked">
+                    </Button>
+                    <Button x:Name="ButGaleria"
+                                    Text="Galeria"
+                                    Clicked="ButGaleria_Clicked">
+                    </Button>
+                </StackLayout>
                 <ListView x:Name="MiLista"
                             BackgroundColor="WhiteSmoke"
                             Margin="10"
                             VerticalOptions="FillAndExpand"
                             RowHeight="60"
                             SeparatorColor="Black">
-                    <ListView.Header>
-                        <StackLayout Orientation="Horizontal"
-                                     HorizontalOptions="Center">
-                            <Button x:Name="ButCamara"
-                                    Text="Camara"
-                                    Clicked="ButCamara_Clicked">
-                            </Button>
-                            <Button x:Name="ButGaleria"
-                                    Text="Galeria"
-                                    Clicked="ButGaleria_Clicked">
-                            </Button>
-                        </StackLayout>
-                    </ListView.Header>
-
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -114,7 +110,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Image x:Name="MiImagen"></Image>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
