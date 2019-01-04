@@ -19,8 +19,12 @@ namespace XamMedidas2
     public partial class DetallePage : ContentPage
     {
 
-        private MediaFile file;
-        private ImageSource imageSource;
+        private class ImagenClase
+        {
+            public string ImagenPath { get; set; }
+            public string ImagenNombre { get; set; }
+        };
+        private List<ImagenClase> imagenes = new List<ImagenClase>();
 
         public DetallePage(MedidasNotasClase MiMedida)
         {
@@ -34,14 +38,11 @@ namespace XamMedidas2
             TxtObservaciones.Text = MiMedida.MedidasNotasobservaciones;
         }
 
+
+
+
         private async void ButCamara_Clicked(object sender, EventArgs e)
         {
-
-            var MiListaEnlace = new List<string>();
-            MiListaEnlace.Add("Elemento 1");
-            MiListaEnlace.Add("Elemento 2");
-            MiLista.ItemsSource = MiListaEnlace;
-
             //await CrossMedia.Current.Initialize();
 
             //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
@@ -199,6 +200,11 @@ namespace XamMedidas2
                 return stream;
             });
 
+            ImagenClase imagen = new ImagenClase();
+            imagen.ImagenPath = file.Path;
+            imagen.ImagenNombre = file.Path;
+            imagenes.Add(imagen);
+            MiLista.ItemsSource = imagenes;
         }
     }
 }
