@@ -186,25 +186,32 @@ namespace XamMedidas2
             }
             var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
             {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
 
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
             });
-
-
-            if (file == null) return;
             
-            MiImagen.Source = ImageSource.FromStream(() =>
-            {
-                var stream = file.GetStream();
-                file.Dispose();
-                return stream;
-            });
+            if (file == null) return;
+
+            var MiImagenNombre = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+            Debug.WriteLine("Answer: " + answer);
 
             ImagenClase imagen = new ImagenClase();
-            imagen.ImagenPath = file.Path;
-            imagen.ImagenNombre = file.Path;
+            imagen.ImagenPath = file.Path.ToString();
+            imagen.ImagenNombre = file.Path.ToString();
             imagenes.Add(imagen);
+
+            MiLista.ItemsSource = null;
             MiLista.ItemsSource = imagenes;
+
+
+
+            //MiImagen.Source = ImageSource.FromStream(() =>
+            //{
+            //    var stream = file.GetStream();
+            //    file.Dispose();
+            //    return stream;
+            //});
+
         }
     }
 }
