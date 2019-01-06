@@ -192,7 +192,7 @@ namespace XamMedidas2
             
             if (file == null) return;
 
-            var MiImagenNombre = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+            var MiImagenNombre = await DisplayAlert("Guardar como...", "Would you like to play a game", "Yes", "No");
             //Debug.WriteLine("Answer: " + answer);
 
             ImagenClase imagen = new ImagenClase();
