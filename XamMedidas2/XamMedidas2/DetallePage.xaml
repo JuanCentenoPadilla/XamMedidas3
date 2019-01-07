@@ -89,12 +89,10 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal"
                                              Padding ="5">
-                                    <Frame  Padding="20,5,20,5"
-                                            BackgroundColor="White"
+                                    <Frame  BackgroundColor="White"
                                             CornerRadius="10">
                                         <Image x:Name="MiImagen"
                                                Source="{Binding ImagenPath}">
-                                            
                                         </Image>
                                     </Frame>
                                     <StackLayout Orientation="Vertical"

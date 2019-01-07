@@ -193,11 +193,11 @@ namespace XamMedidas2
             if (file == null) return;
 
             var MiImagenNombre = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
-            Debug.WriteLine("Answer: " + answer);
+            //Debug.WriteLine("Answer: " + answer);
 
             ImagenClase imagen = new ImagenClase();
             imagen.ImagenPath = file.Path.ToString();
-            imagen.ImagenNombre = file.Path.ToString();
+            imagen.ImagenNombre = MiImagenNombre.ToString();
             imagenes.Add(imagen);
 
             MiLista.ItemsSource = null;
