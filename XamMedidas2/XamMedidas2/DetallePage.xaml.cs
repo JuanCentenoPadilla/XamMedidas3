@@ -43,7 +43,9 @@ namespace XamMedidas2
 
         private async void ButCamara_Clicked(object sender, EventArgs e)
         {
-            //await CrossMedia.Current.Initialize();
+            
+         string MiPrueba1 = aler 
+        //await CrossMedia.Current.Initialize();
 
             //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
             //{
@@ -192,7 +194,8 @@ namespace XamMedidas2
             
             if (file == null) return;
 
-            var MiImagenNombre = await DisplayAlert("Guardar como...", "Would you like to play a game", "Yes", "No");
+
+            var MiImagenNombre = await DisplayAlert("Guardar como...", "Would you like to play a game", "Yes","no");
             //Debug.WriteLine("Answer: " + answer);
 
             ImagenClase imagen = new ImagenClase();
