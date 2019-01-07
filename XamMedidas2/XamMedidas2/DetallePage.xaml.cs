@@ -42,14 +42,9 @@ namespace XamMedidas2
 
         private void ButCamara_Clicked(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            
-         string MiPrueba1 = aler 
-        //await CrossMedia.Current.Initialize();
-=======
-            var MiRespuesta = DisplayAlert("ñlñ","lñ","hjkhjkhj");
+            var MiRespuesta = DisplayAlert("Titulo...", "Mensaje...", "Cancel...");
             //await CrossMedia.Current.Initialize();
->>>>>>> 1782f688ba02673e79eb4766b47000f022c9b281
+            //await CrossMedia.Current.Initialize();
 
             //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
             //{
