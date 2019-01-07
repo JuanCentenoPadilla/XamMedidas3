@@ -23,7 +23,7 @@ namespace XamMedidas2
         string MiDia;
         string MiMes;
         string MiAno;
-        string MiMedidor;
+        internal string MiMedidor;
 
  
         public MainPage()
