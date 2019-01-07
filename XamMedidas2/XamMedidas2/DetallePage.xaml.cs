@@ -12,7 +12,6 @@ using XamMedidas2.Modelos;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 
-
 namespace XamMedidas2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -41,8 +40,9 @@ namespace XamMedidas2
 
 
 
-        private async void ButCamara_Clicked(object sender, EventArgs e)
+        private void ButCamara_Clicked(object sender, EventArgs e)
         {
+            var MiRespuesta = DisplayAlert("ñlñ","lñ","hjkhjkhj");
             //await CrossMedia.Current.Initialize();
 
             //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
