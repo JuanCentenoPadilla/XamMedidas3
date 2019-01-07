@@ -24,4 +24,8 @@
     <Compile Remove="Borrar3.cs" />
     <Compile Remove="Borrar4.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
 </Project>
