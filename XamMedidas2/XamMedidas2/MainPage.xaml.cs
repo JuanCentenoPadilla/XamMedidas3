@@ -44,7 +44,7 @@ namespace XamMedidas2
             }
 
             //Servidor = "213.98.73.215";
-            Servidor = "192.168.1.171";
+            //Servidor = "192.168.1.171";
 
 
             MiDia = DtpFecha.Date.Day.ToString("00");
