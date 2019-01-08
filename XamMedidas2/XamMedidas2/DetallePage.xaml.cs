@@ -193,7 +193,10 @@ namespace XamMedidas2
             
             if (file == null) return;
 
-            string MiNombreImagen = MainPage.MiMedidor + DateTime.Today + imagenes.Count;
+            string MiNombreImagen = MainPage.MiMedidor 
+                + DateTime.Now.Year + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00") 
+                + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00")
+                + ( imagenes.Count + 1 ).ToString("00");
 
             ImagenClase imagen = new ImagenClase();
             imagen.ImagenPath = file.Path.ToString();
@@ -211,6 +214,11 @@ namespace XamMedidas2
             //    file.Dispose();
             //    return stream;
             //});
+
+        }
+
+        private void ButEnviar_Clicked(object sender, EventArgs e)
+        {
 
         }
     }
