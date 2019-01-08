@@ -11,6 +11,8 @@ using XamMedidas2.Modelos;
 
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using System.Net;
+using System.IO;
 
 namespace XamMedidas2
 {
@@ -219,7 +221,41 @@ namespace XamMedidas2
 
         private void ButEnviar_Clicked(object sender, EventArgs e)
         {
+            for (int i = 0; i < imagenes.Count; i++)
+            {
+                MandarImagenAlServidor(imagenes[i].ImagenPath.ToString());
+            }
 
+        }
+        private void MandarImagenAlServidor(string MiPath)
+        {
+            System.Uri url = new System.Uri("http://" + MainPage.Servidor + "/Reparto/Service1.svc/UploadImage");
+
+            //string filePath = @"C:\Users\almacen81\Pictures\foto1.jpg";
+            string filePath =MiPath;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Accept = "application/octet-stream";
+            request.Method = "POST";
+            request.ContentType = "image/jpeg";
+            using (Stream fileStream = File.OpenRead(filePath))
+            using (Stream requestStream = request.GetRequestStream())
+            {
+                int bufferSize = 1002048;
+                byte[] buffer = new byte[bufferSize];
+                int byteCount = 0;
+                while ((byteCount = fileStream.Read(buffer, 0, bufferSize)) > 0)
+                {
+                    requestStream.Write(buffer, 0, byteCount);
+                }
+            }
+            string result;
+            using (WebResponse response = request.GetResponse())
+            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            {
+                result = reader.ReadToEnd();
+            }
+            Console.WriteLine(result);
         }
     }
 }
