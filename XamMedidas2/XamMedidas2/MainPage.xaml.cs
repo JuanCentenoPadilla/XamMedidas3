@@ -14,7 +14,7 @@ namespace XamMedidas2
     public partial class MainPage : ContentPage
     {
         public IEnumerable<MedidasNotasClase> MisMedidas;
-        public string Servidor;
+        public static string Servidor;
         List<MedidasNotasClase> MisMedidasLista = new List<MedidasNotasClase>();
 
         public string data;
@@ -44,8 +44,7 @@ namespace XamMedidas2
             }
 
             //Servidor = "213.98.73.215";
-            Servidor = "192.168.1.171";
-
+            //Servidor = "192.168.1.171";
 
             MiDia = DtpFecha.Date.Day.ToString("00");
             MiMes = DtpFecha.Date.Month.ToString("00");
