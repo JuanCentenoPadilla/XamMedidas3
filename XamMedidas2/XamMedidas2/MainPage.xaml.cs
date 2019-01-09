@@ -34,9 +34,9 @@ namespace XamMedidas2
             Servidor = "No Encontrado";
 
             Ping MiPing = new Ping();
-            if (MiPing.Send("192.168.1.171").Status == IPStatus.Success)
+            if (MiPing.Send("192.168.1.200").Status == IPStatus.Success)
             {
-                Servidor = "192.168.1.171";
+                Servidor = "192.168.1.200";
             }
             else
             {
@@ -44,7 +44,7 @@ namespace XamMedidas2
             }
 
             //Servidor = "213.98.73.215";
-            Servidor = "192.168.1.171";
+            Servidor = "192.168.1.200";
 
             MiDia = DtpFecha.Date.Day.ToString("00");
             MiMes = DtpFecha.Date.Month.ToString("00");
