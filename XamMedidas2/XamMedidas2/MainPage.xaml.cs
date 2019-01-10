@@ -43,8 +43,8 @@ namespace XamMedidas2
                 Servidor = "213.98.73.215";
             }
 
-            Servidor = "213.98.73.215";
-            //Servidor = "10.0.65.200";
+            //Servidor = "213.98.73.215";
+            Servidor = "10.0.65.200";
 
             MiDia = DtpFecha.Date.Day.ToString("00");
             MiMes = DtpFecha.Date.Month.ToString("00");
