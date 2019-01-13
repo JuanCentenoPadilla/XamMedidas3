@@ -192,9 +192,13 @@ namespace XamMedidas2
 
                 var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                 {
-                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
-                    //Directory = "my_images",
-                    //Name = DateTime.Now + "_test.jpg"
+                    Directory = "Test",
+                    SaveToAlbum = true,
+                    CompressionQuality = 75,
+                    CustomPhotoSize = 50,
+                    PhotoSize = PhotoSize.MaxWidthHeight,
+                    MaxWidthHeight = 2000,
+                    DefaultCamera = CameraDevice.Front
                 });
                 if (file == null) return;
                 await DisplayAlert("Path...:", file.Path, "ok");
