@@ -42,76 +42,6 @@ namespace XamMedidas2
 
 
 
-        private void ButCamara_Clicked(object sender, EventArgs e)
-        {
-            var MiRespuesta = DisplayAlert("Titulo...", "Mensaje...", "Cancel...");
-            //await CrossMedia.Current.Initialize();
-            //await CrossMedia.Current.Initialize();
-
-            //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
-            //{
-            //    await DisplayAlert("Mensaje..", "Captura de foto no soportada", "ok");
-            //    return;
-            //}
-            //else
-            //{
-
-            //    var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            //    {
-            //        Directory = "Images",
-            //        Name = DateTime.Now + "_test.jpg"
-            //    });
-            //    if (file == null) return;
-            //    await DisplayAlert("Path...:", file.Path, "ok");
-            //}
-
-
-            //if (CrossMedia.Current.IsCameraAvailable &&
-            //    CrossMedia.Current.IsTakePhotoSupported)
-            //{
-            //    var source = await Application.Current.MainPage.DisplayActionSheet(
-            //        "Seleccionar Origen De Imagen",
-            //        "Cancelar",
-            //        null,
-            //        "Galeria",
-            //        "Camara");
-
-            //    if (source == "Cancelar")
-            //    {
-            //        this.file = null;
-            //        return;
-            //    }
-
-            //    if (source == "Camara")
-            //    {
-            //        this.file = await CrossMedia.Current.TakePhotoAsync(
-            //            new StoreCameraMediaOptions
-            //            {
-            //                Directory = "Sample",
-            //                Name = "test.jpg",
-            //                PhotoSize = PhotoSize.Small,
-            //            }
-            //        );
-            //    }
-            //    else
-            //    {
-            //        this.file = await CrossMedia.Current.PickPhotoAsync();
-            //    }
-            //}
-            //else
-            //{
-            //    this.file = await CrossMedia.Current.PickPhotoAsync();
-            //}
-
-            //if (this.file != null)
-            //{
-            //    this.imageSource = ImageSource.FromStream(() =>
-            //    {
-            //        var stream = file.GetStream();
-            //        return stream;
-            //    });
-            //}
-        }
 
         private void ImgDireccion_Clicked(object sender, EventArgs e)
         {
@@ -231,7 +161,6 @@ namespace XamMedidas2
         {
             System.Uri url = new System.Uri("http://" + MainPage.Servidor + "/Reparto/Service1.svc/UploadImage");
 
-            //string filePath = @"C:\Users\almacen81\Pictures\foto1.jpg";
             string filePath =MiPath;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -255,7 +184,78 @@ namespace XamMedidas2
             {
                 result = reader.ReadToEnd();
             }
-            Console.WriteLine(result);
+            DisplayAlert("Resultado...", result, "OK");
+            //Console.WriteLine(result);
         }
+        private void ButCamara_Clicked(object sender, EventArgs e)
+        {
+            var MiRespuesta = DisplayAlert("Titulo...", "Mensaje...", "Cancel...");
+            //await CrossMedia.Current.Initialize();
+
+            //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
+            //{
+            //    await DisplayAlert("Mensaje..", "Captura de foto no soportada", "ok");
+            //    return;
+            //}
+            //else
+            //{
+
+            //    var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            //    {
+            //        Directory = "Images",
+            //        Name = DateTime.Now + "_test.jpg"
+            //    });
+            //    if (file == null) return;
+            //    await DisplayAlert("Path...:", file.Path, "ok");
+            //}
+
+
+            //if (CrossMedia.Current.IsCameraAvailable &&
+            //    CrossMedia.Current.IsTakePhotoSupported)
+            //{
+            //    var source = await Application.Current.MainPage.DisplayActionSheet(
+            //        "Seleccionar Origen De Imagen",
+            //        "Cancelar",
+            //        null,
+            //        "Galeria",
+            //        "Camara");
+
+            //    if (source == "Cancelar")
+            //    {
+            //        this.file = null;
+            //        return;
+            //    }
+
+            //    if (source == "Camara")
+            //    {
+            //        this.file = await CrossMedia.Current.TakePhotoAsync(
+            //            new StoreCameraMediaOptions
+            //            {
+            //                Directory = "Sample",
+            //                Name = "test.jpg",
+            //                PhotoSize = PhotoSize.Small,
+            //            }
+            //        );
+            //    }
+            //    else
+            //    {
+            //        this.file = await CrossMedia.Current.PickPhotoAsync();
+            //    }
+            //}
+            //else
+            //{
+            //    this.file = await CrossMedia.Current.PickPhotoAsync();
+            //}
+
+            //if (this.file != null)
+            //{
+            //    this.imageSource = ImageSource.FromStream(() =>
+            //    {
+            //        var stream = file.GetStream();
+            //        return stream;
+            //    });
+            //}
+        }
+
     }
 }
