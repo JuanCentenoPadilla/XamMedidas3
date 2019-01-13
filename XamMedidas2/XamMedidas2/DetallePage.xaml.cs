@@ -138,15 +138,6 @@ namespace XamMedidas2
             MiLista.ItemsSource = null;
             MiLista.ItemsSource = imagenes;
 
-
-
-            //MiImagen.Source = ImageSource.FromStream(() =>
-            //{
-            //    var stream = file.GetStream();
-            //    file.Dispose();
-            //    return stream;
-            //});
-
         }
 
         private void ButEnviar_Clicked(object sender, EventArgs e)
@@ -187,27 +178,27 @@ namespace XamMedidas2
             DisplayAlert("Resultado...", result, "OK");
             //Console.WriteLine(result);
         }
-        private void ButCamara_Clicked(object sender, EventArgs e)
+        private async void ButCamara_Clicked(object sender, EventArgs e)
         {
-            var MiRespuesta = DisplayAlert("Titulo...", "Mensaje...", "Cancel...");
-            //await CrossMedia.Current.Initialize();
+            await CrossMedia.Current.Initialize();
 
-            //if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
-            //{
-            //    await DisplayAlert("Mensaje..", "Captura de foto no soportada", "ok");
-            //    return;
-            //}
-            //else
-            //{
+            if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("Mensaje..", "Captura de foto no soportada", "ok");
+                return;
+            }
+            else
+            {
 
-            //    var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            //    {
-            //        Directory = "Images",
-            //        Name = DateTime.Now + "_test.jpg"
-            //    });
-            //    if (file == null) return;
-            //    await DisplayAlert("Path...:", file.Path, "ok");
-            //}
+                var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
+                    //Directory = "my_images",
+                    //Name = DateTime.Now + "_test.jpg"
+                });
+                if (file == null) return;
+                await DisplayAlert("Path...:", file.Path, "ok");
+            }
 
 
             //if (CrossMedia.Current.IsCameraAvailable &&
