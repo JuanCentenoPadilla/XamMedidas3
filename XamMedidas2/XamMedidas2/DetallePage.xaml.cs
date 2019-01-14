@@ -180,7 +180,7 @@ namespace XamMedidas2
         }
         private async void ButCamara_Clicked(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
+            //await CrossMedia.Current.Initialize();
 
             if (!CrossMedia.Current.IsTakePhotoSupported && !CrossMedia.Current.IsPickPhotoSupported)
             {
