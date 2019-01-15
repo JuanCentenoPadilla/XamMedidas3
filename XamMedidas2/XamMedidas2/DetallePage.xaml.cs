@@ -124,19 +124,20 @@ namespace XamMedidas2
             });
             
             if (file == null) return;
+            Añadir_A_Lista(file.Path.ToString());
 
-            string MiNombreImagen = MainPage.MiMedidor 
-                + DateTime.Now.Year + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00") 
-                + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00")
-                + ( imagenes.Count + 1 ).ToString("00");
+            //string MiNombreImagen = MainPage.MiMedidor 
+            //    + DateTime.Now.Year + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00") 
+            //    + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00")
+            //    + ( imagenes.Count + 1 ).ToString("00");
 
-            ImagenClase imagen = new ImagenClase();
-            imagen.ImagenPath = file.Path.ToString();
-            imagen.ImagenNombre = MiNombreImagen.ToString();
-            imagenes.Add(imagen);
+            //ImagenClase imagen = new ImagenClase();
+            //imagen.ImagenPath = file.Path.ToString();
+            //imagen.ImagenNombre = MiNombreImagen.ToString();
+            //imagenes.Add(imagen);
 
-            MiLista.ItemsSource = null;
-            MiLista.ItemsSource = imagenes;
+            //MiLista.ItemsSource = null;
+            //MiLista.ItemsSource = imagenes;
 
         }
 
@@ -146,6 +147,7 @@ namespace XamMedidas2
             {
                 MandarImagenAlServidor(imagenes[i].ImagenPath.ToString());
             }
+            DisplayAlert("Resultado...","Enviadas Al Servidor...", "OK");
 
         }
         private void MandarImagenAlServidor(string MiPath)
@@ -175,7 +177,6 @@ namespace XamMedidas2
             {
                 result = reader.ReadToEnd();
             }
-            DisplayAlert("Resultado...", result, "OK");
             //Console.WriteLine(result);
         }
         private async void ButCamara_Clicked(object sender, EventArgs e)
@@ -201,9 +202,10 @@ namespace XamMedidas2
                     DefaultCamera = CameraDevice.Front
                 });
                 if (file == null) return;
-                await DisplayAlert("Path...:", file.Path, "ok");
-            }
 
+                Añadir_A_Lista(file.Path.ToString());
+                //await DisplayAlert("Path...:", file.Path, "ok");
+            }
 
             //if (CrossMedia.Current.IsCameraAvailable &&
             //    CrossMedia.Current.IsTakePhotoSupported)
@@ -251,6 +253,21 @@ namespace XamMedidas2
             //    });
             //}
         }
+        private void Añadir_A_Lista(string MiPath)
+        {
+            string MiNombreImagen = MainPage.MiMedidor
+                + DateTime.Now.Year + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00")
+                + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00")
+                + (imagenes.Count + 1).ToString("00");
 
+            ImagenClase imagen = new ImagenClase();
+            imagen.ImagenPath = MiPath;
+            imagen.ImagenNombre = MiNombreImagen.ToString();
+            imagenes.Add(imagen);
+
+            MiLista.ItemsSource = null;
+            MiLista.ItemsSource = imagenes;
+
+        }
     }
 }
