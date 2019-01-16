@@ -205,7 +205,7 @@ namespace XamMedidas2
                     CustomPhotoSize = 50,
                     PhotoSize = PhotoSize.Medium,
                     MaxWidthHeight = 2000,
-                    DefaultCamera = CameraDevice.Front
+                    DefaultCamera = CameraDevice.Rear
                 });
                 if (file == null) return;
 
