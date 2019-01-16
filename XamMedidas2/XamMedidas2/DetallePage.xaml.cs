@@ -27,6 +27,11 @@ namespace XamMedidas2
         };
         private List<ImagenClase> imagenes = new List<ImagenClase>();
 
+        public DetallePage()
+        {
+            InitializeComponent();
+        }
+
         public DetallePage(MedidasNotasClase MiMedida)
         {
             InitializeComponent();
@@ -143,11 +148,12 @@ namespace XamMedidas2
 
         private void ButEnviar_Clicked(object sender, EventArgs e)
         {
-            for (int i = 0; i < imagenes.Count; i++)
+            int MiContador;
+            for (MiContador = 0; MiContador < imagenes.Count; MiContador++)
             {
-                MandarImagenAlServidor(imagenes[i].ImagenPath.ToString());
+                MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString());
             }
-            DisplayAlert("Resultado...","Enviadas Al Servidor...", "OK");
+            DisplayAlert("Resultado...", string.Format("Enviadas {0} imagenes...", MiContador) , "OK");
 
         }
         private void MandarImagenAlServidor(string MiPath)
