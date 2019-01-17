@@ -151,7 +151,7 @@ namespace XamMedidas2
             int MiContador;
             for (MiContador = 0; MiContador < imagenes.Count; MiContador++)
             {
-                MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString(),"fotoscorreo/" + imagenes[MiContador].ImagenNombre + ".jpg");
+                MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString(),"fotoscorreo", imagenes[MiContador].ImagenNombre);
             }
             DisplayAlert("Resultado...", string.Format("Enviadas {0} imagenes...", MiContador) , "OK");
 
