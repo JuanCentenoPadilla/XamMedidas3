@@ -6,7 +6,7 @@
              Title="Detalle">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"
-                     BackgroundColor="White">
+                     BackgroundColor="#547799">
             <StackLayout Orientation="Horizontal">
                 <Frame Padding="20,5,20,5"
                        BackgroundColor="White"
