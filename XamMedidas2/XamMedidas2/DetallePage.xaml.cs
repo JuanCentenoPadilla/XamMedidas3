@@ -151,14 +151,14 @@ namespace XamMedidas2
             int MiContador;
             for (MiContador = 0; MiContador < imagenes.Count; MiContador++)
             {
-                MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString(),"fotoscorreo//" + imagenes[MiContador].ImagenNombre + ".jpg");
+                MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString(),"fotoscorreo/" + imagenes[MiContador].ImagenNombre + ".jpg");
             }
             DisplayAlert("Resultado...", string.Format("Enviadas {0} imagenes...", MiContador) , "OK");
 
         }
-        private void MandarImagenAlServidor(string MiPath, string MiNombreDestino)
+        private void MandarImagenAlServidor(string MiPath, string MiCarpetaDestino, string MiNombreDestino)
         {
-            System.Uri url = new System.Uri("http://" + MainPage.Servidor + "/Reparto/Service1.svc/UploadImage/" + MiNombreDestino);
+            System.Uri url = new System.Uri("http://" + MainPage.Servidor + "/Reparto/Service1.svc/UploadImage/" + MiCarpetaDestino + "," + MiNombreDestino);
 
             string filePath =MiPath;
 
