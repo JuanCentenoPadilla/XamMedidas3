@@ -30,10 +30,13 @@
                    Text="15204 CENTENO PADILLA, JUAN"
                        TextColor="White"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal"
+                         Margin="5">
                 <StackLayout>
                     <Image x:Name="ImgDireccion"
                            Source="directions.png"
+                           HeightRequest="50"
+                           WidthRequest="50"
                            Aspect="AspectFill">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer
@@ -44,13 +47,32 @@
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
                     <Label x:Name="TxtDireccion" 
-                           Text="Direccion"/>
+                           Text="Direccion"
+                           TextColor="White"
+                           FontAttributes="Bold">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ImgDireccion_Clicked"
+                                NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                     <Label x:Name="TxtPoblacion"
-                           Text="Direccion"/>
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           Text="Direccion">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ImgDireccion_Clicked"
+                                NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal"
+                         Padding="10,0,10,0">
                 <Image x:Name="ImgTelefono1"
+                       WidthRequest="30"
+                       HeightRequest="30"
                        Source="phone.png">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -58,8 +80,19 @@
                                 NumberOfTapsRequired="1"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Label x:Name="TxtTelefono1"/>
+                <Label x:Name="TxtTelefono1"
+                       HorizontalOptions="Center"
+                       WidthRequest="100"
+                       TextColor="White">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImgTelefono1_Clicked"
+                                              NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
                 <Image x:Name="ImgTelefono2"
+                       WidthRequest="30"
+                       HeightRequest="30"
                        Source="phone.png">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -67,10 +100,22 @@
                                 NumberOfTapsRequired="1"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Label x:Name="TxtTelefono2"/>
+                <Label x:Name="TxtTelefono2"
+                       HorizontalOptions="Center"
+                        WidthRequest="100"
+                       TextColor="White">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImgTelefono2_Clicked"
+                                              NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label x:Name="TxtObservaciones"/>
+            <StackLayout Orientation="Horizontal"
+                         Padding="10,0,10,0">
+                <Label x:Name="TxtObservaciones"
+                       FontAttributes="Bold"
+                       TextColor="White"/>
             </StackLayout>
             <StackLayout>
                 <StackLayout Orientation="Horizontal"
