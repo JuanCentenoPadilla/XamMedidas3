@@ -7,22 +7,28 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"
                      BackgroundColor="#547799">
-            <StackLayout Orientation="Horizontal">
-                <Frame Padding="20,5,20,5"
+            <StackLayout Orientation="Horizontal"
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        >
+                <Frame Margin="5"
+                    Padding="20,5,20,5"
                        BackgroundColor="White"
-                       CornerRadius="10">
+                       CornerRadius="30">
                     <Label x:Name="TxtCuentaClientes"
-                           Text="1"
+                           Text="01"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            TextColor="Black"
-                           FontSize="Large"
+                           FontSize="20"
                            FontAttributes="Bold"/>
                 </Frame>
                 <Label x:Name="TxtCleinte"
-                   FontSize="Large"
+                   VerticalOptions="Center"
+                       FontSize="Large"
                    FontAttributes="Bold"
-                   Text="15204 CENTENO PADILLA, JUAN"/>
+                   Text="15204 CENTENO PADILLA, JUAN"
+                       TextColor="White"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <StackLayout>
