@@ -144,7 +144,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal"
-                                             Padding ="0">
+                                             Padding ="10">
                                         <Image x:Name="MiImagen"
                                                Source="{Binding ImagenPath}">
                                         </Image>
