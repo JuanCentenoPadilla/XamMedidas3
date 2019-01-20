@@ -145,9 +145,14 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal"
                                              Padding ="10">
+                                    <frame Margin="5"
+                                            Padding="20,5,20,5"
+                                            BackgroundColor="White"
+                                            CornerRadius="30">
                                         <Image x:Name="MiImagen"
                                                Source="{Binding ImagenPath}">
                                         </Image>
+                                    </frame>
                                     <StackLayout Orientation="Vertical"
                                                  Margin="5">
                                         <Label  x:Name="MIPath"
