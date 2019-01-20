@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:XamMedidas2"
              x:Class="XamMedidas2.MainPage"
              Title="MEDIDAS..."
-             BackgroundColor="White"">
+             BackgroundColor="White">
 
     <StackLayout Orientation="Vertical">
         <!-- Place new controls here -->
