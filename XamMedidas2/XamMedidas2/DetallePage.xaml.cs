@@ -26,7 +26,7 @@ namespace XamMedidas2
             public string ImagenNombre { get; set; }
         };
         private List<ImagenClase> imagenes = new List<ImagenClase>();
-
+        private int MiMedidaID;
         public DetallePage()
         {
             InitializeComponent();
@@ -42,6 +42,7 @@ namespace XamMedidas2
             TxtTelefono1.Text = MiMedida.MedidasNotastelefono1;
             TxtTelefono2.Text = MiMedida.MedidasNotastelefono2;
             TxtObservaciones.Text = MiMedida.MedidasNotasobservaciones;
+            MiMedidaID = MiMedida.MedidasNotascodigonota;
         }
 
 
@@ -151,7 +152,8 @@ namespace XamMedidas2
             int MiContador;
             for (MiContador = 0; MiContador < imagenes.Count; MiContador++)
             {
-                MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString(),"fotoscorreo", imagenes[MiContador].ImagenNombre);
+                //MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString(),"medidas", imagenes[MiContador].ImagenNombre);
+                MandarImagenAlServidor(imagenes[MiContador].ImagenPath.ToString(), "medidas", MiMedidaID.ToString() + (MiContador + 1).ToString("00")) ;
             }
             DisplayAlert("Resultado...", string.Format("Enviadas {0} imagenes...", MiContador) , "OK");
 
