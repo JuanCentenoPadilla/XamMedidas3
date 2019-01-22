@@ -25,6 +25,7 @@
                    Margin="10"
                    VerticalTextAlignment="Center"/>
             <Entry x:Name="TxtMedidor"
+                   TextChanged="TxtMedidor_TextChanged"
                    HorizontalOptions="End"
                    Placeholder="Medidor"
                    PlaceholderColor="Gray"
